@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../formsCss/malhaMedicao.css" />
+    <script src="../../controllers/dadosInput.js"></script>
+    <script src="../../controllers/limparForm.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,7 +47,7 @@
       </nav>
       <div class="container mmdata">
         <h2>Malha de Medição</h2>
-        <form>
+        <form id="formulario-medicao">
             <div class="form-group">
                 <label for="campo0" class="campo-formulario">Data:</label>
                 <input type="text" class="campo-formulario" id="campo0" name="campo0">
@@ -84,11 +86,11 @@
                 <label for="campo7" class="campo-formulario">Tipo Luminária:</label>
                 <input type="text" class="campo-formulario" id="campo7" name="campo7">
             </div>
-            <button type="submit" class="btn btn-primary">Calcular</button>
-            <button type="submit" class="btn btn-primary">Novo</button>
+            <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+            <button type="button" class="btn btn-primary" onclick="limparFormulario()">Novo</button>
         </form>
     </div>
-    <table class="table table-bordered container">
+    <table class="table table-bordered container" id="tabela-medicao">
         <thead>
             <tr>
                 <th>DATA</th>
@@ -101,7 +103,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="inputMed">
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -111,7 +113,7 @@
                 <td>0</td>
                 
             </tr>
-            <tr>
+            <tr class="inputLuminaria">
                 <td colspan="1"></td>
                 <td colspan="5">Luminária Soneres Zeka Small 50w</td>
                 <td colspan="1"></td>
@@ -125,7 +127,10 @@
                 <td></td>
                 
             </tr>
-            <tr>
+            <tr class="inputEstA">
+                <td colspan="7" font-height="">TESTE</td>
+            </tr>
+            <tr class="calculoDist">
                 <td></td>
                 <td>0</td>
                 <td>0</td>
@@ -214,8 +219,12 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
+            </tr>
+            <tr class="inputEstB">
+                <td colspan="7"></td>
             </tr>
         </tbody>
     </table>
+    
 </body>
 </html>
