@@ -2,8 +2,8 @@ function calcular() {
     // Obter dados do formulário
     var data = document.getElementById('campo0').value;
     var distanciaEntrePostes = parseFloat(document.getElementById('campo1').value);
-    var larguraVia = parseInt(document.getElementById('larguraVia').value);
-    var faixasDeRolamento = document.getElementById('faixaRolamento').value;
+    var larguraVia = parseFloat(document.getElementById('larguraVia').value);
+    var faixasDeRolamento = parseInt(document.getElementById('faixaRolamento').value);
     var alturaLuminaria = document.getElementById('campo4').value;
     var larguraEstacionamentoA = document.getElementById('campo5').value;
     var larguraEstacionamentoB = document.getElementById('campo6').value;
@@ -14,8 +14,8 @@ function calcular() {
 
     // Atualizar os valores nas células da linha
     linha.children[0].textContent = data;
-    linha.children[1].textContent = distanciaEntrePostes;
-    linha.children[2].textContent = larguraVia;
+    linha.children[1].textContent = distanciaEntrePostes.toFixed(2);
+    linha.children[2].textContent = larguraVia.toFixed(2);
     linha.children[3].textContent = faixasDeRolamento;
     linha.children[4].textContent = alturaLuminaria;
     linha.children[5].textContent = larguraEstacionamentoA;
