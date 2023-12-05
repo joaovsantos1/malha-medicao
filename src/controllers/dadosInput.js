@@ -2,8 +2,8 @@ function calcular() {
     // Obter dados do formulário
     var data = document.getElementById('campo0').value;
     var distanciaEntrePostes = parseFloat(document.getElementById('campo1').value);
-    var larguraVia = parseInt(document.getElementById('campo2').value);
-    var faixasDeRolamento = document.getElementById('campo3').value;
+    var larguraVia = parseInt(document.getElementById('larguraVia').value);
+    var faixasDeRolamento = document.getElementById('faixaRolamento').value;
     var alturaLuminaria = document.getElementById('campo4').value;
     var larguraEstacionamentoA = document.getElementById('campo5').value;
     var larguraEstacionamentoB = document.getElementById('campo6').value;
@@ -36,6 +36,6 @@ function calcular() {
     linha4.children[4].textContent = (distanciaEntrePostes / 2) + (distanciaEntrePostes/2)/2
     linha4.children[5].textContent = distanciaEntrePostes
 
-  
+    
 }
 
