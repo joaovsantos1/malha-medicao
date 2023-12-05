@@ -36,6 +36,7 @@ function calcular() {
     linha4.children[4].textContent = (distanciaEntrePostes / 2) + (distanciaEntrePostes/2)/2
     linha4.children[5].textContent = distanciaEntrePostes
 
-    
+    var linha5 = document.querySelector('.inputEstB')
+    linha5.children[0].textContent = "ESTACIONAMENTO B = "+larguraEstacionamentoA.toUpperCase()+ " METROS.";
 }
 
