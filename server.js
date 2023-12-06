@@ -4,9 +4,10 @@ const app = express();
 const port = process.env.PORT || 3000; // Porta padrão 3000
 
 // Middleware para servir arquivos estáticos
+app.use(express.static(path.join(__dirname, 'src','view', 'formsCss')));
+app.use( express.static(path.join(__dirname, 'src','view', 'images')));
 app.use(express.static(path.join(__dirname, 'src')));
-app.use(express.static(path.join(__dirname, 'src', 'formsCss')));
-app.use( express.static(path.join(__dirname, 'src', 'images')));
+
 
 // Rota para a página inicial
 app.get('/', (req, res) => {

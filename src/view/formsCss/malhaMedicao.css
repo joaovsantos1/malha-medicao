@@ -13,6 +13,8 @@ table {
     table-layout: fixed;
     width: 100%; /* Ajuste conforme necessário para aumentar ou diminuir o tamanho da tabela */
     margin: 20px; /* Adicione uma margem para melhorar a aparência */
+    overflow-x: auto;
+    border-collapse: collapse;
 }
 
 th, td {
