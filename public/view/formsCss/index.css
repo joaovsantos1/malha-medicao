@@ -1,0 +1,10 @@
+body{
+    background: rgb(138, 196, 138);
+}
+
+img{
+    width: 100%; /* Tamanho total da largura do contêiner pai (ajuste conforme necessário) */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 0%; /* Borda arredondada (opcional) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

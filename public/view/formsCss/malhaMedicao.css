@@ -1,0 +1,42 @@
+body{
+    background: rgb(138, 196, 138);
+}
+.campo-formulario {
+    margin-bottom: 10px; /* Margem inferior de 10 pixels */
+    font-size: 16px; /* Tamanho da fonte de 16 pixels */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+}
+table {
+    margin-top: 20px; /* Ajusta a margem superior da tabela */
+    margin-left: 50px; /* Ajusta a margem esquerda da tabela */
+    table-layout: fixed;
+    width: 100%; /* Ajuste conforme necessário para aumentar ou diminuir o tamanho da tabela */
+    margin: 20px; /* Adicione uma margem para melhorar a aparência */
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 30%; /* Ajuste conforme necessário para distribuir igualmente entre as colunas */
+    text-align: center; /* Opcional: centraliza o conteúdo dentro das células */
+    border: 1px solid #ddd; /* Adicione uma borda para separar as células */
+    padding: 8px; /* Adicione um preenchimento para melhorar a aparência */
+    font-weight: bold;
+}
+/* Ajuste a largura das colunas específicas conforme necessário */
+th:nth-child(6), td:nth-child(6),
+th:nth-child(7), td:nth-child(7) {
+     width: 36%; /* Ajuste conforme necessário */
+}
+
+.dados{
+    font-size: 50px;
+    height: 80px;
+}
+input[name="dados"] {
+    width: 100%; /* Preenche completamente a largura da célula */
+    height: 100%; /* Preenche completamente a altura da célula */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+    text-align: center;
+}
