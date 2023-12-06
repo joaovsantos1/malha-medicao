@@ -8,10 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../formsCss/malhaMedicao.css" />
     <script src="../../controllers/dadosInput.js"></script>
     <script src="../../controllers/limparForm.js"></script>
     <script src="../../models/calculoInput.js"></script>
+    <script src="../../controllers/gerarPdf.js"></script>
     
 </head>
 <body>
@@ -90,6 +94,7 @@
             </div>
             <button type="button" class="btn btn-primary" onclick="calcular(),calculoVia()">Calcular</button>
             <button type="submit" class="btn btn-primary" onclick="limparFormulario()">Novo</button>
+            <button type="button" class="btn btn-primary" id="geraPdf" onclick="gerarPDF()">Gerar PDF</button>
         </form>
     </div>
     <table class="table table-bordered container" id="tabela-medicao">
@@ -141,7 +146,7 @@
                 <td>0</td>
                 <td></td>
             </tr>
-            <tr class="colMed1">
+            <tr class="colMed">
                 <td id="medida1cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -150,7 +155,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="colMed2">
+            <tr class="colMed">
                 <td id="medida2cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -159,7 +164,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="cloMed3">
+            <tr class="colMed">
                 <td id="medida3cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -168,7 +173,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1">
+            <tr class="ocultar-faixa1 colMed">
                 <td id="medida4cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -177,7 +182,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1">
+            <tr class="ocultar-faixa1 colMed">
                 <td id="medida5cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -186,7 +191,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1">
+            <tr class="ocultar-faixa1 colMed">
                 <td id="medida6cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -195,7 +200,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1 ocultar-faixa2">
+            <tr class="ocultar-faixa1 ocultar-faixa2 colMed">
                 <td id="medida7cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -204,7 +209,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1 ocultar-faixa2">
+            <tr class="ocultar-faixa1 ocultar-faixa2 colMed">
                 <td id="medida8cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
@@ -213,7 +218,7 @@
                 <td class="dados"><input type="text" name="dados"></td>
                 <td></td>
             </tr>
-            <tr class="ocultar-faixa1 ocultar-faixa2">
+            <tr class="ocultar-faixa1 ocultar-faixa2 colMed">
                 <td id="medida9cel">0</td>
                 <td class="dados"><input type="text" name="dados"></td>
                 <td class="dados"><input type="text" name="dados"></td>
