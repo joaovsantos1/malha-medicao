@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, 'src')));
 // Rota para a página inicial
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'src','view', 'index.html'));
+  res.sendFile(path.join(__dirname, 'src','view', 'formsCss', 'index.css'));
 });
 
 // Rotas para outras páginas (adapte conforme necessário)
