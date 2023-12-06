@@ -5,19 +5,21 @@ const port = process.env.PORT || 3000; // Porta padrão 3000
 
 // Middleware para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, 'src', 'formsCss')));
+app.use( express.static(path.join(__dirname, 'src', 'images')));
 
 // Rota para a página inicial
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+  res.sendFile(path.join(__dirname, 'src','view', 'index.html'));
 });
 
 // Rotas para outras páginas (adapte conforme necessário)
 app.get('/modernizacao', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'formsHtml', 'modernizacao.html'));
+  res.sendFile(path.join(__dirname, 'src','view', 'formsHtml', 'modernizacao.html'));
 });
 
 app.get('/malha-medicao', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'formsHtml', 'malhaMedicao.html'));
+  res.sendFile(path.join(__dirname, 'src', 'view', 'formsHtml', 'malhaMedicao.html'));
 });
 
 // Iniciar o servidor
