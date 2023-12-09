@@ -4,7 +4,7 @@ var faixasDeRolamento = parseInt(document.getElementById('faixaRolamento').value
 
 var todasAsLinhas = document.querySelectorAll('.ocultar-faixa1, .ocultar-faixa2');
 todasAsLinhas.forEach(function (linha) {
-   linha.style.display = '';
+   linha.style.display = ' ';
 });
 
 if(faixasDeRolamento === 1){

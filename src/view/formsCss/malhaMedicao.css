@@ -1,16 +1,43 @@
 body{
     background: rgb(138, 196, 138);
 }
+h2{
+    text-align: center;
+}
+ form {
+    padding: 10px; /* Adicione preenchimento para evitar que o conteúdo encoste na borda */
+    margin: 20px; /* Adicione margem para melhorar a aparência */
+} 
+
+#formulario-medicao {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center; */
+}
+.form-group {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+}
 .campo-formulario {
     margin-bottom: 10px; /* Margem inferior de 10 pixels */
     font-size: 16px; /* Tamanho da fonte de 16 pixels */
     font-weight: bold;
-    /* text-transform: uppercase; */
+    width: 200px; /* Ajuste a largura conforme necessário */
+    margin-top: 5px;
+    display: block;
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+    .form-group {
+        display: block;
+    }
 }
 table {
     margin-top: 20px; /* Ajusta a margem superior da tabela */
     margin-left: 50px; /* Ajusta a margem esquerda da tabela */
-    table-layout: fixed;
+    table-layout: auto;
     width: 100%; /* Ajuste conforme necessário para aumentar ou diminuir o tamanho da tabela */
     margin: 20px; /* Adicione uma margem para melhorar a aparência */
     overflow-x: auto;
@@ -18,13 +45,18 @@ table {
 }
 
 th, td {
-    width: 30%; /* Ajuste conforme necessário para distribuir igualmente entre as colunas */
+    width: 36%; /* Ajuste conforme necessário para distribuir igualmente entre as colunas */
     text-align: center; /* Opcional: centraliza o conteúdo dentro das células */
     border: 1px solid #ddd; /* Adicione uma borda para separar as células */
     padding: 8px; /* Adicione um preenchimento para melhorar a aparência */
     font-weight: bold;
 }
 /* Ajuste a largura das colunas específicas conforme necessário */
+ th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) {
+     width: 16%; 
+}
+
 th:nth-child(6), td:nth-child(6),
 th:nth-child(7), td:nth-child(7) {
      width: 36%; /* Ajuste conforme necessário */
@@ -40,3 +72,4 @@ input[name="dados"] {
     box-sizing: border-box; /* Inclui padding e borda no tamanho total */
     text-align: center;
 }
+

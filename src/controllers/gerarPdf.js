@@ -1,39 +1,20 @@
-function gerarPDF() {
-    var columns = [
-        {title: "Medida", dataKey: "medida"},
-        {title: "Dados", dataKey: "dados"}
-    ];
+function exportarParaPDF() {
+    var tabela = document.getElementById('tabela-medicao');
 
-    var rows = [];
-    var medida = 1;
+    // Exportar para XLSX
+    var workbook = XLSX.utils.table_to_book(tabela);
+    var xlsxBlob = XLSX.write(workbook, { bookType: 'xlsx', type: 'blob' });
 
-    // Preencha as linhas aqui com os dados da tabela HTML
-    while ($('.colMed' + medida, 'table').length) {
-        var row = $('.colMed' + medida, 'table');
-        var dados = row.find('input[type="text"]').map(function () {
-            return $(this).val();
-        }).get();
-
-        rows.push({medida: medida, dados: dados.join(', ')});
-        medida++;
-    }
-
-    var element = document.createElement('table');
-    element.innerHTML = '<tr><th>Medida</th><th>Dados</th></tr>';
-
-    rows.forEach(function (row) {
-        var tr = document.createElement('tr');
-        var tdMedida = document.createElement('td');
-        var tdDados = document.createElement('td');
-
-        tdMedida.textContent = row.medida;
-        tdDados.textContent = row.dados;
-
-        tr.appendChild(tdMedida);
-        tr.appendChild(tdDados);
-        element.appendChild(tr);
-    });
-
-    var opt = {margin: 1};
-    html2pdf().from(element).set(opt).save('tabela.pdf');
+    // Converter para PDF
+    var xlsxReader = new FileReader();
+    xlsxReader.onload = function (event) {
+        var data = event.target.result;
+        html2pdf().from(data).outputPdf().then(function (pdf) {
+            // Após a geração do PDF, abra-o em uma nova janela/tab
+            var blob = new Blob([pdf], { type: 'application/pdf' });
+            var url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+        });
+    };
+    xlsxReader.readAsDataURL(xlsxBlob);
 }
