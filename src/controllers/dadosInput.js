@@ -26,7 +26,7 @@ function calcular() {
     linha2.children[1].textContent = tipoLuminaria.toUpperCase();
 
     var linha3 = document.querySelector('.inputEstA')
-    linha3.children[0].textContent = "ESTACIONAMENTO A = "+larguraEstacionamentoA.toUpperCase()+ " METROS.";
+    linha3.children[0].textContent = "ESTACIONAMENTO A = "+larguraEstacionamentoA+ " METROS.";
 
     var linha4 = document.querySelector('.calculoDist')
     linha4.children[0].textContent = ""
@@ -37,6 +37,6 @@ function calcular() {
     linha4.children[5].textContent = distanciaEntrePostes
 
     var linha5 = document.querySelector('.inputEstB')
-    linha5.children[0].textContent = "ESTACIONAMENTO B = "+larguraEstacionamentoA.toUpperCase()+ " METROS.";
+    linha5.children[0].textContent = "ESTACIONAMENTO B = "+larguraEstacionamentoB+ " METROS.";
 }
 
